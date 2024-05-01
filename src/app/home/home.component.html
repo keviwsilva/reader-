@@ -1,0 +1,74 @@
+<div class="search-bar">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Pesquisar...">
+    <button (click)="onSearch()">Buscar</button>
+  </div>
+  <!-- <div class="add-info">
+    <button (click)="adicionarItem()">add new cell</button>
+  </div> -->
+
+
+  <div class="container">
+    <h2>Lista de Celulares</h2>
+    <div class="add-info">
+      <button (click)="adicionarItem()">add new cell</button>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Modelo</th>
+          <th>Tela</th>
+          <th>Valor</th>
+          <th>Alterar</th>
+          <th>Excluir</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of displayedItems">
+          <td>{{ item.id }}</td>
+          <td>{{ item.celular }}</td>
+          <td>{{ item.tela }}</td>
+          <td>{{ item.valor }}</td>
+          <td><img src="../../assets/imgs/botao-editar.png" alt="" (click)="alterarItem(item)"></td>
+          <td><img src="../../assets/imgs/excluir.png" alt="" (click)="excluirItem(item)"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <br><br>
+  
+  <div class="modal-dialog"  *ngIf="showModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">{{ editingMode ? 'Editar Informação' : 'Adicionar Nova Informação' }}</h4> 
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="toggleModal()" (click)="clearForm()">
+          <span aria-hidden="true" >&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #form="ngForm" (ngSubmit)="editingMode ? onAlter(form) : onSave(form)">
+          <div class="form-group">
+            <label for="celular">Celular:</label>
+            <input type="text" class="form-control" id="celular" name="celular" required
+              [(ngModel)]="editingMode ? selectedItem.celular : celular">
+          </div>
+          <div class="form-group">
+            <label for="tela">Tela:</label>
+            <input type="text" class="form-control" id="tela" name="tela" required
+              [(ngModel)]="editingMode ? selectedItem.tela : tela">
+          </div>
+          <div class="form-group">
+            <label for="valor">Valor:</label>
+            <input type="number" class="form-control" id="valor" name="valor" required
+              [(ngModel)]="editingMode ? selectedItem.valor : valor">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="toggleModal()" (click)="clearForm()">Cancelar</button>
+            <button type="submit" class="btn btn-primary">{{ editingMode ? 'Salvar Alterações' : 'Adicionar' }}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+

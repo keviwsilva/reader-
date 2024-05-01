@@ -1,0 +1,183 @@
+// Search bar styling
+.search-bar {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.search-bar input[type="text"] {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.search-bar button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #2196F3; // Adjust background color as desired
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+// Add new cell button styling
+.add-info button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #4CAF50; // Adjust background color as desired
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+// Table styling
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+// Image buttons inside table cells
+.table img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+
+/* Add Modal Styles */
+
+.modal-dialog, .modal-dialog-alter{
+
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  padding: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  // margin: auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+// @media screen and (max-width: 400px) {
+//     .modal-dialog {
+//       width: 250px;
+//       left: 0;
+//       top: 100px;
+//       transform: 0;
+//     }
+//   }
+
+}
+
+
+
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 18px;
+
+}
+
+.close {
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0 5px;
+  margin: -2px 2px 0 0;
+  cursor: pointer;
+  color: #999;
+}
+
+.close:hover {
+  color: #000;
+}
+
+.modal-body {
+  flex: 1;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group-addon {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+}
+
+.input-group-addon.right {
+  border-radius: 0 4px 4px 0;
+}
+
+.input-group {
+  display: flex;
+}
+
+.form-control {
+  width: 100%;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-top: 1px solid #eee;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background-color: #ddd;
+  color: #333;
+}
+
+.btn-primary {
+  background-color: #4CAF50;
+  color: white;
+}
